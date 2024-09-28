@@ -1,0 +1,136 @@
+<!DOCTYPE html> 
+
+<html lang = "en"> 
+
+<head> 
+
+    <meta charset = "UTF-8"> 
+
+    <meta name = "viewport" content = "width=device-width, initial-scale=1.0"> 
+
+    <title>Names</title> 
+
+    
+
+</head> 
+
+
+
+<body>
+
+    <h1>
+
+        <?php 
+
+            echo "This is function <i>file_get_contents():</i>" . "<br>";
+
+            echo file_get_contents("C:\Users\owner\Desktop\GWEN\Codes\Group 7.txt"); 
+
+        ?>
+
+    </h1>
+
+
+
+    <h2>
+
+    <?php
+
+        $file = 'Hello.txt'; 
+
+        $data = 'Hello, world!'; 
+
+
+
+        file_put_contents($file, $data);
+
+        echo 'Data has been written to ' . $file;
+
+    ?>
+
+    </h2>
+
+
+
+    <h3>
+
+    <?php
+
+        $file = 'Hello.txt';
+
+
+
+            if (file_exists($file)) {
+
+                echo 'The file exists.';
+
+            } else {
+
+                echo 'The file does not exist.';
+
+            }
+
+    ?>
+
+    </h3>
+
+
+
+    <h4>
+
+    <?php
+
+        $file = 'Hello.txt';
+
+        $lines = file($file);
+
+
+
+            if ($lines !== false) {
+
+                foreach ($lines as $line) {
+
+                echo $line . '<br>';
+
+                }
+
+            } else {
+
+                echo 'Failed to read the file.';
+
+            }
+
+    ?>
+
+    </h4>
+
+
+
+    <form action="process.php" method="GET">
+
+        <label for="name">Name:</label>
+
+        <input type="text" id="name" name="name">
+
+        <input type="submit" value="Submit GET">
+
+    </form>
+
+
+
+    <form action="process.php" method="POST">
+
+        <label for="gender">Gender:</label>
+
+        <input type="text" id="gender" name="gender">
+
+        <input type="submit" value="Submit POST">
+
+    </form>
+
+
+
+  </body>
+
+
+
