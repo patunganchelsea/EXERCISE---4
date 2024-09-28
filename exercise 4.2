@@ -1,0 +1,28 @@
+<?php
+
+// Handle GET request
+
+if ($_SERVER["REQUEST_METHOD"] == "GET") {
+
+    $name = isset($_GET['name']) ? htmlspecialchars($_GET['name']) : '';
+
+    echo "GET request received. Name: " . $name;
+
+}
+
+
+
+// Handle POST request
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    $gender = isset($_POST['gender']) ? htmlspecialchars($_POST['gender']) : '';
+
+    echo "POST request received. Gender: " . $gender;
+
+}
+
+?>
+
+
+
